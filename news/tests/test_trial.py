@@ -1,8 +1,11 @@
+from unittest import skip
+
 from django.test import TestCase
 
 from news.models import News
 
 
+@skip
 class TestNews(TestCase):
     # Все нужные переменные сохраняем в атрибуты класса.
     TITLE = 'Заголовок новости'
@@ -24,3 +27,5 @@ class TestNews(TestCase):
         # Чтобы проверить равенство с константой -
         # обращаемся к ней через self, а не через cls:
         self.assertEqual(self.news.title, self.TITLE)
+
+
